@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+	<div class="col-md-6">
+		<div class="card p-5 mt-3 text-center">
+			<h3 class="mb-4">Confirmation Page</h3>
+			<p>
+				Dear {{ guest_name }}, <br><br>
+				Thank you for choosing Panther Hotel. We are please to confirm your room reservation from {{ check_in}} to {{ check_out }}
+				<br><br>
+				<strong>Room Type:</strong> {{ room_type }}<br><br>
+				We look forward to seeing you soon.
+			</p>
+			<div class="mt-3">
+				<a href="/" class="btn btn-primary px-4">Back to Home</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+	<div class="col-md-10">
+		<div class="card p-4 mt-3">
+			<h3 class="text-center mb-4">Reservation List</h3>
+			<table class="table table-bordered text-center">
+				<thead class="table-dark">
+					<tr>
+						<th>Name</th>
+						<th>Check-in date</th>
+						<th>Check-out date</th>
+						<th>Room Type</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for r in reservations %}
+					<tr>
+						<td>{{ r['guest_name'] }}</td>
+						<td>{{ r['check_in'] }}</td>
+						<td>{{ r['check_out'] }}</td>
+						<td>{{ r['room_type'] }}</td>
+					</tr>
+					{% else %}
+					<tr>
+						<td colspan="4">No reservations yet.</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<div class="text-center mt-3">
+				<a href="/" class="btn btn-primary px-4">Back to Home</a>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
